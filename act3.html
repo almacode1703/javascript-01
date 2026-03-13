@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+
+<body>
+
+    <h1>Simple Calculator</h1>
+    <input type="number" id="num1" placeholder="Enter first number"> <br><br>
+    <input type="number" id="num2" placeholder="Enter second number"> <br><br>
+    <input type="text" id="operation" placeholder="Enter operation (add, subtract, multiply, divide)"> <br> <br>
+    <button onclick="calculate(operation)">Calculate</button>
+    <p id="result"></p>
+
+    <script>
+        function calculate(operation) {
+            var num1 = parseFloat(document.getElementById("num1").value);
+            var num2 = parseFloat(document.getElementById("num2").value);
+            var operation = document.getElementById("operation").value.toLowerCase();
+
+            if (operation == "add") {
+                var sum = num1 + num2;
+                document.getElementById("result").innerHTML = "The result of operation between  " + num1 + " and " + num2 + " is: " + sum;
+            }
+            else if (operation == "subtract") {
+                var difference = num1 - num2;
+                document.getElementById("result").innerHTML = "The result of operation between  " + num1 + " and " + num2 + " is: " + difference;
+            }
+            else if (operation == "multiply") {
+                var product = num1 * num2;
+                document.getElementById("result").innerHTML = "The result of operation between  " + num1 + " and " + num2 + " is: " + product;
+            }
+            else if (operation == "divide") {
+                if (num2 != 0) {
+                    var quotient = num1 / num2;
+                    document.getElementById("result").innerHTML = "The result of operation between  " + num1 + " and " + num2 + " is: " + quotient;
+                } else {
+                    document.getElementById("result").innerHTML = "Cannot divide by zero!";
+                }
+            } else {
+                document.getElementById("result").innerHTML = "Invalid operation!";
+            }
+        }
+    </script>
+
+</body>
+
+</html>
