@@ -5,6 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Activity 1</title>
+
+    <style>
+        .red-text {
+            color: red;
+            background-color: yellow;
+            padding: 1rem 2rem;
+            border: 2px solid brown ;
+        }
+    </style>
 </head>
 
 <body>
@@ -18,6 +27,7 @@
         function writeTopara() {
             document.getElementById("demo1").innerHTML = "Hello World!";
             document.getElementById("demo2").innerHTML = "Welcome to JavaScript!";
+            document.getElementById("demo1").classList.add("red-text");
         }
 
     </script>
